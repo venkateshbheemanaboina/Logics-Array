@@ -1,0 +1,146 @@
+Data initialization
+There are two ways to initialize the data, 
+	1. Using constructor 
+	2. Using Setter methods 
+
+ex-1: Initialize the data using constructor. 
+#Employee.java
+public class Employee{
+	private int empId;
+	private String empName;
+	private double empSalary;	
+	public Employee(int empId, String empName, double empSalary) {
+		this.empId = empId;
+		this.empName = empName;
+		this.empSalary = empSalary;
+	}
+	@Override
+	public String toString() {
+	    return "Employee [empId=" + empId + ", empName=" + empName + ", empSalary=" + empSalary + "]";
+	}
+}
+1. The constructor used to initialize the data & it executed			automatically when we create the object 
+2. toString() method used to return the data & it executed				automatically when we print the object reference. 
+
+public class ArraylistEx4 {
+	public static void main(String[] args) {
+		ArrayList<Employee> emps = new ArrayList<Employee>();
+		emps.add(new Employee(1001, "chilaka", 1000.45));
+		emps.add(new Employee(1002, "molaka", 2000.45));
+		emps.add(new Employee(1003, "gilika", 3000.45));
+		emps.add(new Employee(1004, "pilaka", 4000.45));
+		emps.add(new Employee(1005, "prathu", 116));
+		
+		Employee employee = emps.get(0);
+		System.out.println(employee);
+		
+		System.out.println("********");
+		
+		for(Employee employee : emps)
+		{	System.out.println(employee);
+		}
+	}
+}
+
+ex-2: Using Setter Approach
+	setters are used to set the data.
+		setXXX()    where xxx = propertyName
+	Getter are used to get the data. 
+		getXXX()   where xxx = propertyName 
+	
+public class Student {
+	private int rollNo;
+	private String firstName;
+	private String lastName;
+	private String email;
+	public int getRollNo() {
+		return rollNo;
+	}
+	public void setRollNo(int rollNo) {
+		this.rollNo = rollNo;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+}
+
+public class ArraylistEx5 {
+	public static void main(String[] args) {
+		Student student1 = new Student();
+		student1.setRollNo(1001);
+		student1.setFirstName("Ratan");
+		student1.setLastName("addanki");
+		student1.setEmail("ratan@gmail.com");
+		
+		Student student2 = new Student();
+		student2.setRollNo(1002);
+		student2.setFirstName("Anu");
+		student2.setLastName("dasari");
+		student2.setEmail("anu@gmail.com");		
+		
+		ArrayList<Student> students = new ArrayList<Student>();
+		students.add(student1);
+		students.add(student2);
+		
+		Student student = students.get(0);
+		System.out.println(student.getRollNo()+" "+student.getFirstName()+" "+student.getLastName()+" "+student.getEmail());
+		
+		for(Student stu : students)
+		{	System.out.println(stu.getRollNo()+" "+stu.getFirstName()+" "+stu.getLastName()+" "+stu.getEmail());	
+		}
+	}
+}
+
+Note: 
+	For the mandatory values we will use constructor Approach.If the constructor is taking 3-values mandatory we have to pass 3-values. 
+	For the optional values we will use setter approach. Total 3-argument but we have the two values we can call the two setters remaining data will be stored as decault values.In future to modify the specific values call the specific setter method. 
+	Here the object is created using 0-arg constructor. 
+
+1. Using constructor Approach
+	
+	Here the object is created using argument constructor. 
+		
+
+
+Assignment: 
+class Book 
+{	bookId;	bookName;	bookPrice; 
+}
+class ArrayListEx5
+{	public static void main(String[] args)
+	{	ArrayList<Book> books; 
+		add 4-book objects 
+			print the first book 
+			print the last book 
+			print all the books 
+	}
+}
+
+class Product
+{	proId 
+	proName
+	proPrice
+	write the setters & Getters 
+}
+
+ArrayList<Product> products; 
+	add three objects, 
+	print the data using for-each
